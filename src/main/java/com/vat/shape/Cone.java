@@ -84,6 +84,6 @@ public class Cone implements Shape {
 
     @Override
     public String toString() {
-        return String.format("Kegel (radius: %d, hoogte: %d)", radius, height);
+        return String.format("Cone (radius: %d, height: %d)", radius, height);
     }
 }

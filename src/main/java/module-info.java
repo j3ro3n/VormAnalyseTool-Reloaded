@@ -7,6 +7,7 @@ module com.vat.vormanalysetool {
     requires org.kordamp.bootstrapfx.core;
     requires javafx.graphics;
     requires java.sql;
+    requires gson;
 
     opens com.vat to javafx.fxml;
     exports com.vat.frame;

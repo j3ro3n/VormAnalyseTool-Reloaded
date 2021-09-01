@@ -3,8 +3,6 @@ package com.vat.frame.data;
 import com.vat.data.SQLStorage;
 import com.vat.data.StorageService;
 import com.vat.frame.MainFrame;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -48,24 +46,24 @@ class DataScene {
 
         toggleGroup = createToggleGroup(toggle);
 
-        Button closeButton = new Button("Annuleren");
+        Button closeButton = new Button("Cancel");
         closeButton.setOnAction(e -> window.close());
 
         Button rightButton = new Button();
 
         switch (type) {
-            case DATA_SCENE_TYPE_LOAD:
-                window.setTitle("VAT - Inladen");
-                label.setText("Selecteer inlaad manier:");
-                rightButton.setText("Inladen");
+            case DATA_SCENE_TYPE_LOAD -> {
+                window.setTitle("VAT - Load");
+                label.setText("Select loading sequins:");
+                rightButton.setText("Load");
                 rightButton.setOnAction(e -> load());
-                break;
-            case DATA_SCENE_TYPE_SAVE:
-                window.setTitle("VAT - Opslaan");
-                label.setText("Selecteer opslaan manier:");
-                rightButton.setText("Opslaan");
+            }
+            case DATA_SCENE_TYPE_SAVE -> {
+                window.setTitle("VAT - Save");
+                label.setText("Select saving manner:");
+                rightButton.setText("Save");
                 rightButton.setOnAction(e -> save());
-                break;
+            }
         }
 
         HBox buttons = new HBox(10);
@@ -80,12 +78,7 @@ class DataScene {
         window.showAndWait();
     }
 
-    /**
-     * Creating a new Toggle Group
-     *
-     * @param toggle
-     * @return
-     */
+    //Create new toggle group
     private static ToggleGroup createToggleGroup(HBox toggle) {
         ToggleGroup toggleGroup = new ToggleGroup();
 
@@ -95,12 +88,12 @@ class DataScene {
             }
         });
 
-        ToggleButton tb1 = new ToggleButton("Tekst");
+        ToggleButton tb1 = new ToggleButton("Text");
         tb1.setUserData(StorageService.STORAGE_TYPE_TEXT);
         tb1.setToggleGroup(toggleGroup);
         tb1.setSelected(true);
 
-        ToggleButton tb2 = new ToggleButton("Objecten");
+        ToggleButton tb2 = new ToggleButton("Objects");
         tb2.setUserData(StorageService.STORAGE_TYPE_OBJECT);
         tb2.setToggleGroup(toggleGroup);
 

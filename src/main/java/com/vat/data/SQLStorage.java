@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class SQLStorage {
+public class SQLStorage implements StorageInterface {
 
     //The URL to the MariaDB vat database with live connection to it. Sets and gets database URL
     private static String databaseUrl = "jdbc:mysql://192.168.178.20:3306/vat?serverTimezone=UTC";

@@ -11,12 +11,11 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
-import java.util.Map;
 
 class ShapeScene {
     HashMap<String, TextField> textFields;
     private Label testLabel;
-    private int fieldCount;
+    private int fieldCount = 0;
     private boolean pressesAdd = false;
 
     HashMap<String, Integer> createWindowAndShow(String text, HashMap<String, String> fields) {
@@ -36,7 +35,7 @@ class ShapeScene {
         System.out.println(fields);
         layout.getChildren().removeAll(grid);
 
-        for (Map.Entry<String, String> entry : fields.entrySet()) {
+        for (HashMap.Entry<String, String> entry : fields.entrySet()) {
             Label fieldLabel = new Label(entry.getValue());
             grid.add(fieldLabel, 0, fieldCount);
             fieldCount++;

@@ -1,6 +1,5 @@
 package com.vat.shape;
 
-
 import java.util.HashMap;
 
 public class Cylinder implements Shape {

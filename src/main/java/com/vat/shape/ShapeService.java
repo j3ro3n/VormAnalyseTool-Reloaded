@@ -13,7 +13,7 @@ public class ShapeService {
         switch (shapeType) {
             case "Cuboid":
                 return Cuboid.fields;
-            case "Spher":
+            case "Sphere":
                 return Sphere.fields;
             case "Cylinder":
                 return Cylinder.fields;
