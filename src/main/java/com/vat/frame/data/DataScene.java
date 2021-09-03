@@ -54,13 +54,13 @@ class DataScene {
         switch (type) {
             case DATA_SCENE_TYPE_LOAD -> {
                 window.setTitle("VAT - Load");
-                label.setText("Select loading sequins:");
+                label.setText("Select loading sequence:");
                 rightButton.setText("Load");
                 rightButton.setOnAction(e -> load());
             }
             case DATA_SCENE_TYPE_SAVE -> {
                 window.setTitle("VAT - Save");
-                label.setText("Select saving manner:");
+                label.setText("Select saving format! :");
                 rightButton.setText("Save");
                 rightButton.setOnAction(e -> save());
             }

@@ -31,12 +31,18 @@ public class MainFrame extends Application {
     private Shape previousSelectedShape = null;
     private String previousSelectedItem = null;
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    private static final int shadowSize = 50;
 
     @Override
     public void start(Stage primaryStage) {
+        //window.initStyle(StageStyle.TRANSPARENT);
+//
+        //StackPane stackPane = new StackPane(createShadowPane());
+        //stackPane.setStyle(
+        //        "-fx-background-color:rgba(255, 255, 255, 0.5):" +
+        //                "-fx-background-insets: " + shadowSize + ";"
+        //);
+
         window = primaryStage;
         window.setTitle("Vorm Analyse Tool");
 
@@ -49,10 +55,46 @@ public class MainFrame extends Application {
         borderPane.setCenter(editor);
 
         Scene scene = new Scene(borderPane, 600, 350);
+        //scene.setFill(Color.TRANSPARENT);
+        //window.setOpacity(0.70);
         window.setScene(scene);
         window.setResizable(false);
         window.show();
+    }
+        // Create a shadow effect as a halo around the pane and not within
+        // the pane's content area.
+        //private Pane createShadowPane() {
+        //    Pane shadowPane = new Pane();
+        //    // Moet dit niet in css stylesheet?
+        //    shadowPane.setStyle(
+        //        "-fx-background-color: white;" +
+        //                "-fx-effect: dropshadow(gaussian, red, " + shadowSize + ",0,0,0,0);" +
+        //                "-fx-background-insets: " + shadowSize + ";"
+        //);
+        //    Rectangle innerRect = new Rectangle();
+        //    Rectangle outerRect = new Rectangle();
+        //    shadowPane.layoutBoundsProperty().addListener(
+        //            (observable, oldBounds, newBounds) -> {
+        //                innerRect.relocate(
+        //                        newBounds.getMinX() + shadowSize,
+        //                        newBounds.getMinY() + shadowSize
+        //                );
+        //                innerRect.setWidth(newBounds.getWidth() - shadowSize * 2);
+        //                innerRect.setHeight(newBounds.getHeight() - shadowSize * 2);
+//
+        //                outerRect.setWidth(newBounds.getWidth());
+        //                outerRect.setHeight(newBounds.getHeight());
+//
+        //                javafx.scene.shape.Shape clip = javafx.scene.shape.Shape.subtract(outerRect, innerRect);
+        //                shadowPane.setClip(clip);
+        //            }
+        //    );
+//
+        //    return shadowPane;
 
+        //}
+    public static void main(String[] args) {
+        launch(args);
     }
 
     private GridPane createEditor() {
@@ -73,8 +115,6 @@ public class MainFrame extends Application {
 
         editor.add(leftPane, 0, 0);
         editor.add(rightPane, 1, 0);
-
-        // Left Pane
 
         // Shape Selector
         VBox shapeTypeBox = this.createShapeTypeBox();

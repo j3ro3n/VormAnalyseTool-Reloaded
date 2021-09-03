@@ -52,6 +52,6 @@ class PyramidTest {
     void testToString() {
         Pyramid pyramid = new Pyramid( 8, 1, 9);
 
-        assertEquals(String.format("Piramide (lengte: %d, breedte: %d, hoogte: %d)", 8, 1, 9), pyramid.toString());
+        assertEquals(String.format("Pyramid (length: %d, width: %d, height: %d)", 8, 1, 9), pyramid.toString());
     }
 }

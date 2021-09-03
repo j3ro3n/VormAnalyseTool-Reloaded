@@ -55,6 +55,6 @@ public class Sphere implements Shape {
 
     @Override
     public String toString() {
-        return String.format("Bol (radius: %d)", radius);
+        return String.format("Sphere (radius: %d)", radius);
     }
 }
