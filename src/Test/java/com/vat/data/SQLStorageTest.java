@@ -93,7 +93,7 @@ class SQLStorageTest {
 
     @Test
     void canMakeConnectionInvalid() {
-        SQLStorage.setDatabaseUrl("jdbc:mysql://127.0.0.1:3306/vat?user=vatuser&password=VatUser!&useUnicode=true&characterEncoding=UTF-8");
+        SQLStorage.setDatabaseUrl("jdbc:mysql://127.0.0.1:3307//vat?useSSL=false&serverTimezone=UTC");
         assertFalse(SQLStorage::canMakeConnection);
     }
 

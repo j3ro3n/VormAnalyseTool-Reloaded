@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class SQLStorage implements StorageInterface {
 
     //The URL to the MariaDB vat database with live connection to it. Sets and gets database URL
-    private static String databaseUrl = "jdbc:mysql://127.0.0.1:3306/vat?user=vatuser&password=VatUser!&useUnicode=true&characterEncoding=UTF-8";
+    private static String databaseUrl = "jdbc:mysql://127.0.0.1:3307/vat?useSSL=false&serverTimezone=UTC";
     private Connection connection;
     static String getDatabaseUrl() {
         return databaseUrl;
