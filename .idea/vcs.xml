@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/VormAnalyseTool-Reloaded.wiki" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/VormAnalyseTool.wiki" vcs="Git" />
   </component>
 </project>
